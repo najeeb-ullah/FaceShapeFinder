@@ -7,7 +7,7 @@ import face_recognition
 import urllib.request
 
 # Load the jpg file into a numpy array
-image = face_recognition.load_image_file("najeeb3.jpeg")
+image = face_recognition.load_image_file("munim.jpeg")
 
 # Find all facial features in all the faces in the image
 face_landmarks_list = face_recognition.face_landmarks(image)
@@ -96,19 +96,26 @@ else:
 print("face length = ",face)
 
 
+shape="Null"
 
 if face>cheek and forehead<cheek:
+    shape="oval"
     print("Your FaceShape is Oval")
 elif face>cheek and cheek==forehead:
-    print("Your FaceShape is Rectangle")
+    shape="Rectangle"
+    print("Your Face Shape is ",shape)
 elif forehead<cheek and jawline>face:
-    print("Your FaceShape is Round")
+    shape = "Round"
+    print("Your Face Shape is ",shape)
 elif face>cheek>forehead:
-    print("Your FaceShape is Diamond")
+    shape = "Diamond"
+    print("Your Face Shape is ",shape)
 elif forehead == face:
-    print("Your FaceShape is Square")
+    shape = "square"
+    print("Your Face Shape is ",shape)
 elif forehead>cheek:
-    print("Your Face Shape is Triangle")
+    shape="Triangle"
+    print("Your Face Shape is ",shape)
 
 
 print("end_________________")
