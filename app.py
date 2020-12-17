@@ -13,7 +13,7 @@ def getimage():
     req_body = request.get_json()
     print("the request = " , request  )
     print("json = " , request.data  )
-    print("the url is = " , request.args.url )
+    print("the url is = " , request.args.get("url" ))
     image_url = req_body['url']
     response = jsonify(result = faceDetector.get_face_shap(image_url))
     #print(response)
