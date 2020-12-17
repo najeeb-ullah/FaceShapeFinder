@@ -8,12 +8,13 @@ def check():
 
     return "hello world"
 
-@app.route('/check' , methods=['GET'])
+@app.route('/check' , methods=['POST'])
 def getimage():
-    reqURl = request.args.get("url" )
-   
-    response = jsonify(result = faceDetector.get_face_shap(reqURl))
-    #print(response)
+    req_body = request.get_json()
+    print("the request = " , req_body  )
+    image_url = req_body['url']
+    response = jsonify(result = faceDetector.get_face_shap(image_url))
+    print(response)
     return response
 
 
