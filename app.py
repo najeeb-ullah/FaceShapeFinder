@@ -11,7 +11,8 @@ def check():
 @app.route('/check' , methods=['GET'])
 def getimage():
     req_body = request.get_json()
-    print("the request = " , request)
+    print("the request = " , request  )
+    print("json = " , req_body  )
     image_url = req_body['url']
     response = jsonify(result = faceDetector.get_face_shap(image_url))
     print(response)
