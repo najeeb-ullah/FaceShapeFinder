@@ -12,10 +12,11 @@ def check():
 def getimage():
     req_body = request.get_json()
     print("the request = " , request  )
-    print("json = " , req_body  )
+    print("json = " , request.data  )
+    print("json = " , request.args , "hello " ,request.values  )
     image_url = req_body['url']
     response = jsonify(result = faceDetector.get_face_shap(image_url))
-    print(response)
+    #print(response)
     return response
 
 
