@@ -105,7 +105,7 @@ def get_face_shap(url):
     shape="Null"
 
     if face>cheek and forehead<cheek:
-        return "oval"
+        return "Oval"
         # print("Your FaceShape is Oval")
     elif face>cheek and cheek==forehead:
         return "Rectangle"
@@ -117,7 +117,7 @@ def get_face_shap(url):
         return "Diamond"
         # print("Your Face Shape is ",shape)
     elif forehead == face:
-        return "square"
+        return "Square"
         # print("Your Face Shape is ",shape)
     elif forehead>cheek:
         return "Triangle"
